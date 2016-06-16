@@ -3,7 +3,8 @@ var express = require('express'),
   knex = require('../db/bookshelf');
 
 router.get('/', (req, res) => {
-  var users = [{name:'bob'},{name:'chuck'},{name:'ed'},{name:'jim'},{name:'lob'}];
+  // var users = [{name:'bob'},{name:'chuck'},{name:'ed'},{name:'jim'},{name:'lob'}];
+  
   res.render('users/index', {users:users})
 })
 
