@@ -30,7 +30,6 @@ app.get('/', (req,res)=>{
   res.send('up and running');
 })
 
-console.log(process.env.DATABASE_URL);
 // start server
 app.set('port', (process.env.PORT || 9001));
 app.listen(app.get('port'),() => {
