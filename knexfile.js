@@ -13,7 +13,7 @@ module.exports = {
   production: {
     client: 'pg',
     connection: {
-      database: 'rocket',
+      database: 'DATABASE_URL',
     },
     pool: {
       min: 2,
