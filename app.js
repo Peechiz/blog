@@ -27,7 +27,7 @@ app.use('/users/:id/posts', posts);
 app.use('/users', users);
 
 // start server
-app.set('port', (process.ENV.PORT || 9001))
+app.set('port', (process.ENV.PORT || 9001));
 app.listen(app.get('port'),() => {
   console.log('The Server is OVER 9000!!!');
 });
