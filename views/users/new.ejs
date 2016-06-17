@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <div class="container">
+      <!-- user, avatar -->
+      <div class="row">
+        <h1>Add a new user!</h1>
+        <form class="col s6" action="/users" method="post">
+          <label for="user">User Name: </label>
+          <input type="text" id="user" name="user[user]" class="validate">
+
+          <label for="avatar">Avatar URL: </label>
+          <input type="text" name="user[avatar]" id="avatar" value="">
+
+          <button class="btn waves-effect waves-light" type="submit">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </body>
+</html>
