@@ -6,8 +6,23 @@
 </head>
 <body>
   <h1>Users</h1>
-  <% users.forEach(function(user){ %>
-    <li><%= user.name %></li>
-  <% }) %>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Avatar</th>
+        <th>User Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(function(user){ %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><img src="<%= user.avatar %>"></td>
+          <td><a href="users/<%= user.id %>"><%= user.user %></a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
 </body>
 </html>

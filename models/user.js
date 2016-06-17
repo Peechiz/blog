@@ -1,7 +1,11 @@
 var bookshelf = require('../db/bookshelf');
+var Post = require('./post')
 
 var User = bookshelf.Model.extend({
-  tableName: 'users'
+  tableName: 'users',
+  posts: function(){
+    return this.hasMany(Post)
+  }
 })
 
-modules.exports = User;
+module.exports = User;

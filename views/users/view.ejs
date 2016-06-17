@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= user.user %></title>
+</head>
+<body>
+  <h1><img src="<%= user.avatar %>"><%= user.user %></h1>
+
+  <ul>
+    <li>Number of posts: <%= user.posts.length%></li>
+  </ul>
+  <p>
+    <a href="/users/<%= user.id %>/posts">View Posts</a>
+  </p>
+  <a href="../users">Back...</a>
+</body>
+</html>

@@ -1,25 +1,24 @@
 var express = require('express'),
   router = express.Router(),
   knex = require('../db/bookshelf');
+  User = require('../models/user')
 
 router.get('/', (req, res) => {
   // var users = [{name:'bob'},{name:'chuck'},{name:'ed'},{name:'jim'},{name:'lob'}];
-  
-  res.render('users/index', {users:users})
+  new User().fetchAll().then( users => {
+    users = users.toJSON();
+    console.log(users);
+    res.render('users/index', {users:users})
+  })
 })
 
-// router.post('/', (req,res) => {
-//   var post = req.body;
-//   post.year = parseInt(post.year);
-//   knex('posts').insert({
-//     name: post.name,
-//     author: post.author,
-//     year: post.year,
-//     created_at: now,
-//     updated_at: now
-//   }).then((result) => {
-//     res.redirect('/posts');
-//   })
-// })
+router.get('/:id', (req,res) => {
+  var id = req.params.id;
+  new User({'id':id}).fetch({withRelated: ['posts']}).then( user => {
+    user = user.toJSON();
+    console.log(user);
+    res.render('users/view',{user:user})
+  })
+})
 
 module.exports = router;
