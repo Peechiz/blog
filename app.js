@@ -26,6 +26,10 @@ var posts = require('./routes/posts');
 app.use('/users/:id/posts', posts);
 app.use('/users', users);
 
+app.get('/', (req,res)=>{
+  res.send('up and running');
+})
+
 // start server
 app.set('port', (process.env.PORT || 9001));
 app.listen(app.get('port'),() => {
